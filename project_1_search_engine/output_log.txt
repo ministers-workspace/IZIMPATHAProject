@@ -1,0 +1,32 @@
+Found 22 files under 'testdir'.
+Searching for: "TODO" using 4 worker thread(s)...
+
+
+--- Search Complete ---
+Total matches found: 22
+------------------------
+
+file11.txt:1: line 11 has a TODO marker 
+file12.txt:1: line 12 has a TODO marker 
+file15.txt:1: line 15 has a TODO marker 
+file16.txt:1: line 16 has a TODO marker 
+file19.txt:1: line 19 has a TODO marker 
+file2.txt:1: line 2 has a TODO marker 
+file22.txt:1: line 22 has a TODO marker 
+file3.txt:1: line 3 has a TODO marker 
+file6.txt:1: line 6 has a TODO marker 
+file7.txt:1: line 7 has a TODO marker 
+file1.txt:1: line 1 has a TODO marker 
+file10.txt:1: line 10 has a TODO marker 
+file13.txt:1: line 13 has a TODO marker 
+file14.txt:1: line 14 has a TODO marker 
+file17.txt:1: line 17 has a TODO marker 
+file18.txt:1: line 18 has a TODO marker 
+file20.txt:1: line 20 has a TODO marker 
+file21.txt:1: line 21 has a TODO marker 
+file4.txt:1: line 4 has a TODO marker 
+file5.txt:1: line 5 has a TODO marker 
+file8.txt:1: line 8 has a TODO marker 
+file9.txt:1: line 9 has a TODO marker 
+
+Results written to results.csv
