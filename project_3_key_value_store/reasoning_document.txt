@@ -1,0 +1,30 @@
+Reasoning Document
+==================
+
+1. Garbage Collection
+---------------------
+Java's Garbage Collector automatically reclaims heap memory for objects that are no longer reachable by any live reference. In this program, a CacheEntry becomes eligible for garbage collection when it is removed from the ArrayList and no other variable refers to it. The program also creates temporary CacheEntry objects in Main.demonstrateGarbageCollection(). After that method creates those objects without saving references, they become eligible for collection.
+
+The CacheEntry class overrides finalize() only because the assignment requests a Garbage Collection demonstration. In modern Java, finalize() is deprecated and should not be used for important cleanup. Java does not guarantee when garbage collection will happen, so finalize() output may vary between runs.
+
+2. Variable shadowing and this
+------------------------------
+The CacheEntry constructor receives parameters named key, value, and timestamp. These names are the same as the instance fields. That creates variable shadowing: inside the constructor, the name key refers to the parameter first, not the field.
+
+Using this.key means "the key field belonging to this object." Without this, a statement such as key = key would only assign the parameter to itself and the object's field would remain null.
+
+3. Static variable versus instance variable
+-------------------------------------------
+A static variable belongs to the class and is shared by all objects of that class. An instance variable belongs to one object.
+
+totalOperations is static because the project requires one global operation counter across the whole system. The cache ArrayList is not static because the actual stored data should belong to a particular CacheStore object. Keeping the data as an instance variable also improves encapsulation and prevents accidental sharing between separate cache objects.
+
+4. Thread safety and synchronized
+---------------------------------
+Multiple UserThread objects call CacheStore.put() at the same time. ArrayList is not naturally thread-safe, so simultaneous modifications can cause lost updates, corrupted internal state, or exceptions.
+
+The synchronized keyword makes a thread acquire the CacheStore object's monitor before entering put(), get(), delete(), size(), or snapshotEntries(). Only one thread can hold that monitor at once. In put(), this prevents two threads from searching and adding to the ArrayList at the same time. It also prevents the SnapshotThread from copying the ArrayList while a UserThread is changing it.
+
+5. SnapshotThread safety
+------------------------
+The SnapshotThread does not write the live ArrayList directly to the file. Instead, it calls CacheStore.snapshotEntries(), which safely creates a copy while synchronized. Then SnapshotThread writes the copy to snapshot.txt. This design protects the cache but avoids locking user threads during slow disk I/O.

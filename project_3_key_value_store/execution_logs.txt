@@ -1,0 +1,385 @@
+/vercel/sandbox/data/thread_safe_key_value_store/src/CacheEntry.java:62: warning: [removal] finalize() in Object has been deprecated and marked for removal
+    protected void finalize() throws Throwable {
+                   ^
+/vercel/sandbox/data/thread_safe_key_value_store/src/CacheEntry.java:64: warning: [removal] finalize() in Object has been deprecated and marked for removal
+        super.finalize();
+             ^
+2 warnings
+Student ID used: 12345
+C concurrent user threads: 15
+Expected entries after writes: 1500
+/vercel/sandbox/data/thread_safe_key_value_store/src/CacheEntry.java:62: warning: [removal] finalize() in Object has been deprecated and marked for removal
+    protected void finalize() throws Throwable {
+                   ^
+/vercel/sandbox/data/thread_safe_key_value_store/src/CacheEntry.java:64: warning: [removal] finalize() in Object has been deprecated and marked for removal
+        super.finalize();
+             ^
+2 warnings
+UserThread-12 wrote 25 entries
+UserThread-4 wrote 25 entries
+UserThread-5 wrote 25 entries
+UserThread-9 wrote 25 entries
+UserThread-8 wrote 25 entries
+UserThread-13 wrote 25 entries
+UserThread-2 wrote 25 entries
+UserThread-14 wrote 25 entries
+UserThread-10 wrote 25 entries
+UserThread-7 wrote 25 entries
+UserThread-1 wrote 25 entries
+UserThread-3 wrote 25 entries
+UserThread-11 wrote 25 entries
+UserThread-15 wrote 25 entries
+UserThread-6 wrote 25 entries
+UserThread-14 wrote 50 entries
+UserThread-9 wrote 50 entries
+UserThread-4 wrote 50 entries
+UserThread-11 wrote 50 entries
+UserThread-12 wrote 50 entries
+UserThread-8 wrote 50 entries
+UserThread-1 wrote 50 entries
+UserThread-2 wrote 50 entries
+UserThread-15 wrote 50 entries
+UserThread-5 wrote 50 entries
+UserThread-3 wrote 50 entries
+UserThread-10 wrote 50 entries
+UserThread-13 wrote 50 entries
+UserThread-6 wrote 50 entries
+UserThread-7 wrote 50 entries
+UserThread-14 wrote 75 entries
+UserThread-12 wrote 75 entries
+UserThread-11 wrote 75 entries
+UserThread-2 wrote 75 entries
+UserThread-13 wrote 75 entries
+UserThread-1 wrote 75 entries
+UserThread-4 wrote 75 entries
+UserThread-8 wrote 75 entries
+UserThread-15 wrote 75 entries
+UserThread-9 wrote 75 entries
+UserThread-10 wrote 75 entries
+UserThread-3 wrote 75 entries
+UserThread-6 wrote 75 entries
+UserThread-7 wrote 75 entries
+UserThread-5 wrote 75 entries
+UserThread-14 wrote 100 entries
+UserThread-11 wrote 100 entries
+UserThread-12 wrote 100 entries
+UserThread-2 wrote 100 entries
+UserThread-3 wrote 100 entries
+UserThread-4 wrote 100 entries
+UserThread-1 wrote 100 entries
+UserThread-13 wrote 100 entries
+UserThread-15 wrote 100 entries
+UserThread-10 wrote 100 entries
+UserThread-5 wrote 100 entries
+UserThread-6 wrote 100 entries
+UserThread-8 wrote 100 entries
+UserThread-7 wrote 100 entries
+UserThread-9 wrote 100 entries
+SnapshotThread saved 1500 entries to snapshot.txt
+Actual entries after writes: 1500
+Total operations performed globally: 1500
+SUCCESS: synchronized put() protected every write. No data was lost.
+GC requested after creating temporary CacheEntry objects.
+Garbage Collector is destroying evicted entry: temporary-595
+Garbage Collector is destroying evicted entry: temporary-498
+Garbage Collector is destroying evicted entry: temporary-497
+Garbage Collector is destroying evicted entry: temporary-496
+Garbage Collector is destroying evicted entry: temporary-495
+Garbage Collector is destroying evicted entry: temporary-494
+Garbage Collector is destroying evicted entry: temporary-493
+Garbage Collector is destroying evicted entry: temporary-492
+Garbage Collector is destroying evicted entry: temporary-491
+Garbage Collector is destroying evicted entry: temporary-490
+Garbage Collector is destroying evicted entry: temporary-489
+Garbage Collector is destroying evicted entry: temporary-488
+Garbage Collector is destroying evicted entry: temporary-487
+Garbage Collector is destroying evicted entry: temporary-486
+Garbage Collector is destroying evicted entry: temporary-485
+Garbage Collector is destroying evicted entry: temporary-484
+Garbage Collector is destroying evicted entry: temporary-483
+Garbage Collector is destroying evicted entry: temporary-482
+Garbage Collector is destroying evicted entry: temporary-481
+Garbage Collector is destroying evicted entry: temporary-480
+Garbage Collector is destroying evicted entry: temporary-479
+Garbage Collector is destroying evicted entry: temporary-478
+Garbage Collector is destroying evicted entry: temporary-477
+Garbage Collector is destroying evicted entry: temporary-476
+Garbage Collector is destroying evicted entry: temporary-475
+Garbage Collector is destroying evicted entry: temporary-474
+Garbage Collector is destroying evicted entry: temporary-473
+Garbage Collector is destroying evicted entry: temporary-472
+Garbage Collector is destroying evicted entry: temporary-471
+Garbage Collector is destroying evicted entry: temporary-470
+Garbage Collector is destroying evicted entry: temporary-469
+Garbage Collector is destroying evicted entry: temporary-468
+Garbage Collector is destroying evicted entry: temporary-467
+Garbage Collector is destroying evicted entry: temporary-466
+Garbage Collector is destroying evicted entry: temporary-465
+Garbage Collector is destroying evicted entry: temporary-464
+Garbage Collector is destroying evicted entry: temporary-463
+Garbage Collector is destroying evicted entry: temporary-462
+Garbage Collector is destroying evicted entry: temporary-461
+Garbage Collector is destroying evicted entry: temporary-460
+Garbage Collector is destroying evicted entry: temporary-459
+Garbage Collector is destroying evicted entry: temporary-458
+Garbage Collector is destroying evicted entry: temporary-457
+Garbage Collector is destroying evicted entry: temporary-456
+Garbage Collector is destroying evicted entry: temporary-455
+Garbage Collector is destroying evicted entry: temporary-454
+Garbage Collector is destroying evicted entry: temporary-453
+Garbage Collector is destroying evicted entry: temporary-452
+Garbage Collector is destroying evicted entry: temporary-451
+Garbage Collector is destroying evicted entry: temporary-450
+Garbage Collector is destroying evicted entry: temporary-449
+Garbage Collector is destroying evicted entry: temporary-448
+Garbage Collector is destroying evicted entry: temporary-447
+Garbage Collector is destroying evicted entry: temporary-446
+Garbage Collector is destroying evicted entry: temporary-445
+Garbage Collector is destroying evicted entry: temporary-444
+Garbage Collector is destroying evicted entry: temporary-443
+Garbage Collector is destroying evicted entry: temporary-442
+Garbage Collector is destroying evicted entry: temporary-441
+Garbage Collector is destroying evicted entry: temporary-440
+Garbage Collector is destroying evicted entry: temporary-439
+Garbage Collector is destroying evicted entry: temporary-438
+Garbage Collector is destroying evicted entry: temporary-437
+Garbage Collector is destroying evicted entry: temporary-436
+Garbage Collector is destroying evicted entry: temporary-435
+Garbage Collector is destroying evicted entry: temporary-434
+Garbage Collector is destroying evicted entry: temporary-433
+Garbage Collector is destroying evicted entry: temporary-432
+Garbage Collector is destroying evicted entry: temporary-431
+Garbage Collector is destroying evicted entry: temporary-430
+Garbage Collector is destroying evicted entry: temporary-429
+Garbage Collector is destroying evicted entry: temporary-428
+Garbage Collector is destroying evicted entry: temporary-427
+Garbage Collector is destroying evicted entry: temporary-426
+Garbage Collector is destroying evicted entry: temporary-425
+Garbage Collector is destroying evicted entry: temporary-424
+Garbage Collector is destroying evicted entry: temporary-423
+Garbage Collector is destroying evicted entry: temporary-422
+Garbage Collector is destroying evicted entry: temporary-421
+Garbage Collector is destroying evicted entry: temporary-420
+Garbage Collector is destroying evicted entry: temporary-419
+Garbage Collector is destroying evicted entry: temporary-418
+Garbage Collector is destroying evicted entry: temporary-417
+Garbage Collector is destroying evicted entry: temporary-416
+Garbage Collector is destroying evicted entry: temporary-415
+Garbage Collector is destroying evicted entry: temporary-414
+Garbage Collector is destroying evicted entry: temporary-413
+Garbage Collector is destroying evicted entry: temporary-412
+Garbage Collector is destroying evicted entry: temporary-411
+Garbage Collector is destroying evicted entry: temporary-410
+Garbage Collector is destroying evicted entry: temporary-409
+Garbage Collector is destroying evicted entry: temporary-408
+Garbage Collector is destroying evicted entry: temporary-407
+Garbage Collector is destroying evicted entry: temporary-406
+Garbage Collector is destroying evicted entry: temporary-405
+Garbage Collector is destroying evicted entry: temporary-404
+Garbage Collector is destroying evicted entry: temporary-403
+Garbage Collector is destroying evicted entry: temporary-402
+Garbage Collector is destroying evicted entry: temporary-401
+Garbage Collector is destroying evicted entry: temporary-400
+Garbage Collector is destroying evicted entry: temporary-399
+Garbage Collector is destroying evicted entry: temporary-398
+Garbage Collector is destroying evicted entry: temporary-397
+Garbage Collector is destroying evicted entry: temporary-396
+Garbage Collector is destroying evicted entry: temporary-395
+Garbage Collector is destroying evicted entry: temporary-394
+Garbage Collector is destroying evicted entry: temporary-393
+Garbage Collector is destroying evicted entry: temporary-392
+Garbage Collector is destroying evicted entry: temporary-391
+Garbage Collector is destroying evicted entry: temporary-390
+Garbage Collector is destroying evicted entry: temporary-389
+Garbage Collector is destroying evicted entry: temporary-388
+Garbage Collector is destroying evicted entry: temporary-387
+Garbage Collector is destroying evicted entry: temporary-386
+Garbage Collector is destroying evicted entry: temporary-385
+Garbage Collector is destroying evicted entry: temporary-384
+Garbage Collector is destroying evicted entry: temporary-383
+Garbage Collector is destroying evicted entry: temporary-382
+Garbage Collector is destroying evicted entry: temporary-381
+Garbage Collector is destroying evicted entry: temporary-380
+Garbage Collector is destroying evicted entry: temporary-379
+Garbage Collector is destroying evicted entry: temporary-378
+Garbage Collector is destroying evicted entry: temporary-377
+Garbage Collector is destroying evicted entry: temporary-376
+Garbage Collector is destroying evicted entry: temporary-375
+Garbage Collector is destroying evicted entry: temporary-374
+Garbage Collector is destroying evicted entry: temporary-373
+Garbage Collector is destroying evicted entry: temporary-372
+Garbage Collector is destroying evicted entry: temporary-371
+Garbage Collector is destroying evicted entry: temporary-370
+Garbage Collector is destroying evicted entry: temporary-369
+Garbage Collector is destroying evicted entry: temporary-368
+Garbage Collector is destroying evicted entry: temporary-367
+Garbage Collector is destroying evicted entry: temporary-366
+Garbage Collector is destroying evicted entry: temporary-365
+Garbage Collector is destroying evicted entry: temporary-364
+Garbage Collector is destroying evicted entry: temporary-363
+Garbage Collector is destroying evicted entry: temporary-362
+Garbage Collector is destroying evicted entry: temporary-361
+Garbage Collector is destroying evicted entry: temporary-360
+Garbage Collector is destroying evicted entry: temporary-359
+Garbage Collector is destroying evicted entry: temporary-358
+Garbage Collector is destroying evicted entry: temporary-357
+Garbage Collector is destroying evicted entry: temporary-356
+Garbage Collector is destroying evicted entry: temporary-355
+Garbage Collector is destroying evicted entry: temporary-354
+Garbage Collector is destroying evicted entry: temporary-353
+Garbage Collector is destroying evicted entry: temporary-352
+Garbage Collector is destroying evicted entry: temporary-351
+Garbage Collector is destroying evicted entry: temporary-350
+Garbage Collector is destroying evicted entry: temporary-349
+Garbage Collector is destroying evicted entry: temporary-348
+Garbage Collector is destroying evicted entry: temporary-347
+Garbage Collector is destroying evicted entry: temporary-346
+Garbage Collector is destroying evicted entry: temporary-345
+Garbage Collector is destroying evicted entry: temporary-344
+Garbage Collector is destroying evicted entry: temporary-343
+Garbage Collector is destroying evicted entry: temporary-342
+Garbage Collector is destroying evicted entry: temporary-341
+Garbage Collector is destroying evicted entry: temporary-340
+Garbage Collector is destroying evicted entry: temporary-339
+Garbage Collector is destroying evicted entry: temporary-338
+Garbage Collector is destroying evicted entry: temporary-337
+Garbage Collector is destroying evicted entry: temporary-336
+Garbage Collector is destroying evicted entry: temporary-335
+Garbage Collector is destroying evicted entry: temporary-334
+Garbage Collector is destroying evicted entry: temporary-333
+Garbage Collector is destroying evicted entry: temporary-332
+Garbage Collector is destroying evicted entry: temporary-331
+Garbage Collector is destroying evicted entry: temporary-330
+Garbage Collector is destroying evicted entry: temporary-329
+Garbage Collector is destroying evicted entry: temporary-328
+Garbage Collector is destroying evicted entry: temporary-327
+Garbage Collector is destroying evicted entry: temporary-326
+Garbage Collector is destroying evicted entry: temporary-325
+Garbage Collector is destroying evicted entry: temporary-324
+Garbage Collector is destroying evicted entry: temporary-323
+Garbage Collector is destroying evicted entry: temporary-322
+Garbage Collector is destroying evicted entry: temporary-321
+Garbage Collector is destroying evicted entry: temporary-320
+Garbage Collector is destroying evicted entry: temporary-319
+Garbage Collector is destroying evicted entry: temporary-318
+Garbage Collector is destroying evicted entry: temporary-317
+Garbage Collector is destroying evicted entry: temporary-316
+Garbage Collector is destroying evicted entry: temporary-315
+Garbage Collector is destroying evicted entry: temporary-314
+Garbage Collector is destroying evicted entry: temporary-313
+Garbage Collector is destroying evicted entry: temporary-312
+Garbage Collector is destroying evicted entry: temporary-311
+Garbage Collector is destroying evicted entry: temporary-310
+Garbage Collector is destroying evicted entry: temporary-309
+Garbage Collector is destroying evicted entry: temporary-308
+Garbage Collector is destroying evicted entry: temporary-307
+Garbage Collector is destroying evicted entry: temporary-306
+Garbage Collector is destroying evicted entry: temporary-305
+Garbage Collector is destroying evicted entry: temporary-304
+Garbage Collector is destroying evicted entry: temporary-303
+Garbage Collector is destroying evicted entry: temporary-302
+Garbage Collector is destroying evicted entry: temporary-301
+Garbage Collector is destroying evicted entry: temporary-300
+Garbage Collector is destroying evicted entry: temporary-299
+Garbage Collector is destroying evicted entry: temporary-298
+Garbage Collector is destroying evicted entry: temporary-297
+Garbage Collector is destroying evicted entry: temporary-296
+Garbage Collector is destroying evicted entry: temporary-295
+Garbage Collector is destroying evicted entry: temporary-294
+Garbage Collector is destroying evicted entry: temporary-293
+Garbage Collector is destroying evicted entry: temporary-292
+Garbage Collector is destroying evicted entry: temporary-291
+Garbage Collector is destroying evicted entry: temporary-290
+Garbage Collector is destroying evicted entry: temporary-289
+Garbage Collector is destroying evicted entry: temporary-288
+Garbage Collector is destroying evicted entry: temporary-287
+Garbage Collector is destroying evicted entry: temporary-286
+Garbage Collector is destroying evicted entry: temporary-285
+Garbage Collector is destroying evicted entry: temporary-284
+Garbage Collector is destroying evicted entry: temporary-283
+Garbage Collector is destroying evicted entry: temporary-282
+Garbage Collector is destroying evicted entry: temporary-281
+Garbage Collector is destroying evicted entry: temporary-280
+Garbage Collector is destroying evicted entry: temporary-279
+Garbage Collector is destroying evicted entry: temporary-278
+Garbage Collector is destroying evicted entry: temporary-277
+Garbage Collector is destroying evicted entry: temporary-276
+Garbage Collector is destroying evicted entry: temporary-275
+Garbage Collector is destroying evicted entry: temporary-274
+Garbage Collector is destroying evicted entry: temporary-273
+Garbage Collector is destroying evicted entry: temporary-272
+Garbage Collector is destroying evicted entry: temporary-271
+Garbage Collector is destroying evicted entry: temporary-270
+Garbage Collector is destroying evicted entry: temporary-269
+Garbage Collector is destroying evicted entry: temporary-268
+Garbage Collector is destroying evicted entry: temporary-267
+Garbage Collector is destroying evicted entry: temporary-266
+Garbage Collector is destroying evicted entry: temporary-265
+Garbage Collector is destroying evicted entry: temporary-264
+Garbage Collector is destroying evicted entry: temporary-263
+Garbage Collector is destroying evicted entry: temporary-262
+Garbage Collector is destroying evicted entry: temporary-261
+Garbage Collector is destroying evicted entry: temporary-260
+Garbage Collector is destroying evicted entry: temporary-259
+Garbage Collector is destroying evicted entry: temporary-258
+Garbage Collector is destroying evicted entry: temporary-257
+Garbage Collector is destroying evicted entry: temporary-256
+Garbage Collector is destroying evicted entry: temporary-255
+Garbage Collector is destroying evicted entry: temporary-254
+Garbage Collector is destroying evicted entry: temporary-253
+Garbage Collector is destroying evicted entry: temporary-252
+Garbage Collector is destroying evicted entry: temporary-251
+Garbage Collector is destroying evicted entry: temporary-250
+Garbage Collector is destroying evicted entry: temporary-249
+Garbage Collector is destroying evicted entry: temporary-248
+Garbage Collector is destroying evicted entry: temporary-247
+Garbage Collector is destroying evicted entry: temporary-246
+Garbage Collector is destroying evicted entry: temporary-245
+Garbage Collector is destroying evicted entry: temporary-244
+Garbage Collector is destroying evicted entry: temporary-243
+Garbage Collector is destroying evicted entry: temporary-242
+Garbage Collector is destroying evicted entry: temporary-241
+Garbage Collector is destroying evicted entry: temporary-240
+Garbage Collector is destroying evicted entry: temporary-239
+Garbage Collector is destroying evicted entry: temporary-238
+Garbage Collector is destroying evicted entry: temporary-237
+Garbage Collector is destroying evicted entry: temporary-236
+Garbage Collector is destroying evicted entry: temporary-235
+Garbage Collector is destroying evicted entry: temporary-234
+Garbage Collector is destroying evicted entry: temporary-233
+Garbage Collector is destroying evicted entry: temporary-232
+Garbage Collector is destroying evicted entry: temporary-231
+Garbage Collector is destroying evicted entry: temporary-230
+Garbage Collector is destroying evicted entry: temporary-229
+Garbage Collector is destroying evicted entry: temporary-228
+Garbage Collector is destroying evicted entry: temporary-227
+Garbage Collector is destroying evicted entry: temporary-226
+Garbage Collector is destroying evicted entry: temporary-225
+Garbage Collector is destroying evicted entry: temporary-224
+Garbage Collector is destroying evicted entry: temporary-223
+Garbage Collector is destroying evicted entry: temporary-222
+Garbage Collector is destroying evicted entry: temporary-221
+Garbage Collector is destroying evicted entry: temporary-220
+Garbage Collector is destroying evicted entry: temporary-219
+Garbage Collector is destroying evicted entry: temporary-218
+Garbage Collector is destroying evicted entry: temporary-217
+Garbage Collector is destroying evicted entry: temporary-216
+Garbage Collector is destroying evicted entry: temporary-215
+Garbage Collector is destroying evicted entry: temporary-214
+Garbage Collector is destroying evicted entry: temporary-213
+Garbage Collector is destroying evicted entry: temporary-212
+Garbage Collector is destroying evicted entry: temporary-211
+Garbage Collector is destroying evicted entry: temporary-210
+Garbage Collector is destroying evicted entry: temporary-209
+Garbage Collector is destroying evicted entry: temporary-208
+Garbage Collector is destroying evicted entry: temporary-207
+Garbage Collector is destroying evicted entry: temporary-206
+Garbage Collector is destroying evicted entry: temporary-205
+Garbage Collector is destroying evicted entry: temporary-204
+Garbage Collector is destroying evicted entry: temporary-203
+Garbage Collector is destroying evicted entry: temporary-202
+Garbage Collector is destroying evicted entry: temporary-201
+Garbage Collector is destroying evicted entry: temporary-200
+Garbage Collector is destroying evicted entry: temporary-199
+Garbage Collector is destroying evicted entry: temporary-198
+Garbage Collector is destroying evicted entry: temporary-197

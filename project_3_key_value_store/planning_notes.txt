@@ -1,0 +1,34 @@
+Planning Notes
+==============
+
+Static versus instance fields
+-----------------------------
+- CacheStore.entries is an instance variable because the stored cache data belongs to one specific CacheStore object. If a program created two CacheStore objects, each one should have its own independent ArrayList of CacheEntry objects.
+- CacheStore.totalOperations is static because the assignment asks for a global count of memory operations across the whole system. Static makes the counter belong to the CacheStore class rather than to one individual cache object.
+- CacheEntry.key, CacheEntry.value, and CacheEntry.timestamp are instance variables because each cache node must store its own independent data.
+
+Failed synchronization draft
+----------------------------
+My first draft synchronized only the add line:
+
+    public void put(String key, String value) {
+        for (CacheEntry entry : entries) {
+            if (entry.getKey().equals(key)) {
+                entry.setValue(value);
+                totalOperations++;
+                return;
+            }
+        }
+        synchronized (entries) {
+            entries.add(new CacheEntry(key, value, System.currentTimeMillis()));
+        }
+    }
+
+Why this failed:
+- The search loop was still outside the monitor.
+- Two UserThread objects could both search at the same time, both decide the key was missing, and then both add an entry.
+- A SnapshotThread could also iterate while a UserThread changed the ArrayList, causing inconsistent snapshots or ConcurrentModificationException.
+
+Final synchronization strategy
+------------------------------
+The final program uses synchronized methods in CacheStore: put(), get(), delete(), size(), and snapshotEntries(). This makes each method acquire the CacheStore object's monitor before touching the ArrayList. The SnapshotThread asks for a defensive copy using snapshotEntries(), then writes that copy to disk outside the monitor so user threads are not blocked during the slower file-writing step.
