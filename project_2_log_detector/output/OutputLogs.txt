@@ -1,0 +1,42 @@
+AUTOMATED LOG PARSING ENGINE
+============================
+Student ID first digit used: 3
+Personalized threshold A = first digit + 4 = 7
+Total parsed logs: 19
+
+PARSED LOG OBJECTS
+==================
+INFO -> 2026-06-26 09:00:00 INFO web - Health check passed
+SECURITY -> 2026-06-26 09:00:05 SECURITY auth user=ayanda ip=10.0.0.12 action=LOGIN_OK - Normal login
+SECURITY -> 2026-06-26 09:01:10 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+SECURITY -> 2026-06-26 09:01:11 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+SECURITY -> 2026-06-26 09:01:12 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+SECURITY -> 2026-06-26 09:01:13 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+SECURITY -> 2026-06-26 09:01:14 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+SECURITY -> 2026-06-26 09:01:15 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+SECURITY -> 2026-06-26 09:01:16 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+SECURITY -> 2026-06-26 09:02:30 SECURITY auth user=guest ip=10.0.0.9 action=FAILED_LOGIN - Single failed login
+ERROR -> 2026-06-26 09:03:00 ERROR web code=404 - Missing image file
+ERROR -> 2026-06-26 09:04:05 ERROR api code=500 - Internal Server Error during checkout
+ERROR -> 2026-06-26 09:04:06 ERROR api code=500 - Internal Server Error during checkout
+ERROR -> 2026-06-26 09:04:07 ERROR api code=500 - Internal Server Error during checkout
+ERROR -> 2026-06-26 09:04:08 ERROR api code=500 - Internal Server Error during checkout
+ERROR -> 2026-06-26 09:04:09 ERROR api code=500 - Internal Server Error during checkout
+ERROR -> 2026-06-26 09:04:10 ERROR api code=500 - Internal Server Error during checkout
+ERROR -> 2026-06-26 09:04:11 ERROR api code=500 - Internal Server Error during checkout
+INFO -> 2026-06-26 09:05:20 INFO scheduler - Nightly cleanup completed
+
+ANOMALY RESULTS
+===============
+BRUTE-FORCE ATTACK DETECTED
+  Key: admin@192.168.1.44
+  Window started: 2026-06-26 09:01:10
+  Matching events inside 60 seconds: 7
+  First sample: 2026-06-26 09:01:10 SECURITY auth user=admin ip=192.168.1.44 action=FAILED_LOGIN - Bad password attempt
+
+SERVER CRASH / MELTDOWN DETECTED
+  Key: api
+  Window started: 2026-06-26 09:04:05
+  Matching events inside 60 seconds: 7
+  First sample: 2026-06-26 09:04:05 ERROR api code=500 - Internal Server Error during checkout
+

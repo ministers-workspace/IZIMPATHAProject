@@ -1,0 +1,99 @@
+AUTOMATED LOG PARSING ENGINE - REASONING DOCUMENT
+
+1. Why inheritance was used
+
+The parent class LogEntry stores fields that every log has: timestamp, level,
+source, message, and secondStamp. The subclasses InfoLog, ErrorLog, and
+SecurityLog add behavior for their own category.
+
+ErrorLog adds statusCode because HTTP/server error codes only belong to error
+records. SecurityLog adds username, ipAddress, and action because those fields
+only belong to authentication/security records.
+
+2. Why polymorphism was used
+
+The main program stores every parsed object in one collection:
+
+ArrayList<LogEntry> parsedLogs
+
+That collection contains InfoLog, ErrorLog, and SecurityLog objects at the same
+time. The anomaly detector does not need three separate lists. It uses:
+
+LogEntry windowStart
+LogEntry candidate
+
+Then it calls methods such as:
+
+windowStart.isCriticalSignal()
+windowStart.getAnomalyType()
+windowStart.getAnomalyKey()
+candidate.getShortDescription()
+
+These method calls demonstrate Dynamic Method Dispatch. For example, when
+windowStart is actually a SecurityLog object, Java runs
+SecurityLog.isCriticalSignal(), which checks whether action equals
+"FAILED_LOGIN". When windowStart is actually an ErrorLog object, Java runs
+ErrorLog.isCriticalSignal(), which checks whether statusCode is 500 or higher.
+
+The variable name is still LogEntry, but the runtime object decides which
+method body is executed.
+
+3. Specific code example of Dynamic Method Dispatch
+
+In AnomalyDetector.detect(), the variable candidate is declared as:
+
+LogEntry candidate = scanIterator.next();
+
+If candidate refers to this parsed raw string:
+
+2026-06-26 09:04:05 | ERR | api | code=500 message=Internal Server Error during checkout
+
+then candidate is an ErrorLog object, so candidate.getAnomalyType() returns
+"SERVER_CRASH" and candidate.getAnomalyKey() returns "api".
+
+If candidate refers to this parsed raw string:
+
+2026-06-26 09:01:10 | SEC | auth | user=admin ip=192.168.1.44 action=FAILED_LOGIN message=Bad password attempt
+
+then candidate is a SecurityLog object, so candidate.getAnomalyType() returns
+"BRUTE_FORCE" and candidate.getAnomalyKey() returns "admin@192.168.1.44".
+
+The detector can therefore use the same loop for both cyberattack detection and
+server crash detection.
+
+4. Manual parsing choices
+
+LogParser does not use regex or external parsing libraries. It uses:
+
+- indexOf(" | ") to find separators
+- substring() to extract timestamp, type, source, and details
+- charAt(0) for the switch route
+- indexOf("user="), indexOf("ip="), indexOf("action="), and indexOf("message=")
+  to extract fields
+- manual digit conversion in readIntegerValue()
+
+This matches the assignment constraint that parsing must be done with String
+methods and char extraction.
+
+5. Personalized threshold
+
+The program calculates:
+
+A = first student-ID digit + 4
+
+The first digit is passed when running the program. Example:
+
+java -cp src LogEngine 3
+
+If the first digit is 3, then A = 7. The simulated data generator creates
+exactly enough failed-login records and 500-error records to trigger both
+required detections at the selected threshold.
+
+6. Detection logic
+
+The detector uses nested Iterator loops over ArrayList<LogEntry>. For every
+critical starting log, it counts matching critical logs in the next 60 seconds.
+Related logs are grouped by getAnomalyType() and getAnomalyKey().
+
+SecurityLog groups brute-force attempts by username and IP address.
+ErrorLog groups server crash signals by source service.

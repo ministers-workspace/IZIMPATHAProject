@@ -1,0 +1,89 @@
+AUTOMATED LOG PARSING ENGINE - PLANNING NOTES
+
+1. Class diagram / inheritance hierarchy
+
+                         +-----------------------------+
+                         |          LogEntry           |
+                         |-----------------------------|
+                         | - timestamp: String         |
+                         | - level: String             |
+                         | - source: String            |
+                         | - message: String           |
+                         | - secondStamp: int          |
+                         |-----------------------------|
+                         | + getCategory(): String     |
+                         | + isCriticalSignal(): bool  |
+                         | + getAnomalyType(): String  |
+                         | + getAnomalyKey(): String   |
+                         | + getShortDescription(): String |
+                         +--------------^--------------+
+                                        |
+               +------------------------+------------------------+
+               |                        |                        |
+        +------+-------+         +------+-------+         +------+----------+
+        |   InfoLog    |         |   ErrorLog   |         |  SecurityLog   |
+        |--------------|         |--------------|         |----------------|
+        | normal logs  |         | statusCode   |         | username       |
+        | no anomaly   |         | 500 signals  |         | ipAddress      |
+        |              |         | server crash |         | action         |
+        +--------------+         +--------------+         | failed login   |
+                                                          | brute force    |
+                                                          +----------------+
+
+2. Parsing flowchart
+
+START
+  |
+  v
+Read one raw String from ArrayList<String>
+  |
+  v
+Find " | " divider positions with indexOf()
+  |
+  v
+Use substring() to extract timestamp, type, source, and details
+  |
+  v
+route = type.charAt(0)
+  |
+  v
+switch(route)
+  |
+  +-- 'I' --> read message=... --> new InfoLog(...)
+  |
+  +-- 'E' --> read code=... manually with charAt()
+  |           read message=...
+  |           new ErrorLog(...)
+  |
+  +-- 'S' --> read user=..., ip=..., action=...
+  |           read message=...
+  |           new SecurityLog(...)
+  |
+  +-- default --> new InfoLog(...) as an unclassified fallback
+  |
+  v
+Store returned object in ArrayList<LogEntry>
+  |
+  v
+Repeat until all raw strings are parsed
+  |
+  v
+Use Iterator<LogEntry> and nested if statements to scan for:
+  - A failed login events for the same username and IP in 60 seconds
+  - A server error events for the same source in 60 seconds
+  where A = first student-ID digit + 4
+  |
+  v
+Print alerts
+  |
+  v
+END
+
+3. Control statements used
+
+- switch in LogParser.parse() routes INF, ERR, and SEC records.
+- switch in SecurityLog.isCriticalSignal() classifies security actions.
+- switch in AnomalyDetector.buildAlert() chooses the alert headline.
+- nested if statements in AnomalyDetector.detect() check critical status,
+  anomaly family, positive time order, and 60-second window.
+- while loops build test data, parse logs, and scan logs with Iterators.
